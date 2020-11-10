@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <h1>Tic Tac Toe API</h1>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}"/>
+    </head>
+    <table>
+        <tr id ="row1">
+            <td></td>
+            <td class="square vert"></td>
+        </tr>
+        <tr id="row2">
+            <td class="square hori"></td>
+            <td class="square vert hori"></td>
+            <td class="square hori"></td>
+        </tr>
+        <tr id="row3">
+            <td></td>
+            <td class="square vert"></td>
+        </tr>
+    </table>
+
+    <div class = "container">
+        <!-- Reset the Board-->
+        <h1 id="winner"></h1>
+        <button onclick="reset_board()">Reset</button>
+    </div>
+</html>
