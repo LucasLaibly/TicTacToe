@@ -7,23 +7,25 @@
     </head>
     <table>
         <tr id ="row1">
-            <td></td>
-            <td class="square vert"></td>
+            <td>{{ board[0][0] }}</td>
+            <td class="square vert">{{ board[0][1] }}</td>
+            <td>{{ board[0][2] }}</td>
         </tr>
         <tr id="row2">
-            <td class="square hori"></td>
-            <td class="square vert hori"></td>
-            <td class="square hori"></td>
+            <td class="square hori">{{ board[1][0] }}</td>
+            <td class="square vert hori">{{ board[1][1] }}</td>
+            <td class="square hori">{{ board[1][2] }}</td>
         </tr>
         <tr id="row3">
-            <td></td>
-            <td class="square vert"></td>
+            <td>{{ board[2][0] }}</td>
+            <td class="square vert">{{ board[2][1] }}</td>
+            <td>{{ board[2][2] }}</td>
         </tr>
     </table>
 
     <div class = "container">
         <!-- Reset the Board-->
         <h1 id="winner"></h1>
-        <button href="{{url_for('reset')}}" class="btn btn-default">Reset</button>
+        <button class="btn btn-default">Reset</button>
     </div>
 </html>
