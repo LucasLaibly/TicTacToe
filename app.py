@@ -10,6 +10,7 @@ app.secret_key = 'super secret key'
 app.config["SESSION_TYPE"] = 'filesystem'
 Session(app)
 
+# Set the board
 @app.route("/set")
 def base():
     if "board" not in session:
@@ -18,34 +19,24 @@ def base():
         session["board"]  = [[None, None, None], [None, None, None],[None, None, None]]
     
     return render_template(
-        "board.html"
+        "board.html",
+        board=session["board"]
     )
 
+# Play an action
 @app.route("/action/<int:row>/<int:col>")
 def action(row, col):
     if session["board"][row][col] is None:
         session["board"][row][col] = session["turn"]
-        session["turn"] = "O" if session["board"] == "X" else "O"
-    
-    for i in range(len(session["board"])):
-        for j in range(len(session["board"][0])):
-            print(session["board"])
-            if session["board"][i][j] == session["turn"]:
-                result = dfs(session["board"], i, j)
-                print(result)
-    return render_template(
-        "board.html"
-    )
-    
 
-@app.route("/api/data")
-def get_data():
-    return app.send_static_file("data.json")
+    if session["turn"] == "X":
+            session["turn"] = "O"
+    else:
+        session["turn"] = "X"
 
-@app.route("/get/board")
-def home():
     return render_template(
-        "board.html"
+        "board.html",
+        board=session["board"]
     )
 
 # DFS Cross
