@@ -25,6 +25,7 @@
 
     <div class = "container">
         <!-- Reset the Board-->
-        <a href="{{url_for('reset')}}" class="btn btn-default"><button class="btn btn-default">Reset</button></a>
+        <h1 id="winner">PLAYER {{ player }} WINS!</h1>
+        <a href="{{url_for('reset')}}" class="btn btn-default">Reset</a>
     </div>
 </html>
