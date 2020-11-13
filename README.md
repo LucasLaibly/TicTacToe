@@ -15,3 +15,8 @@ I hope to become more familiar with Flask and Python as a whole, while being abl
 
 ### Current:
 1. Game board created - 11/9/2020
+2. Winning board created / Pass player action / Determine winner - 11/12/2020
+
+
+### TODO: 
+1. `minimax` function
